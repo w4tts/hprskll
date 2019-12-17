@@ -9,7 +9,7 @@ public class CoffeeMachine {
     static int dCups = 9;
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        AvailableProducts();
+        availableProducts();
         System.out.println("Write action (buy, fill, take): ");
         String action = scanner.nextLine();
         if(action.equals("buy")){
@@ -22,14 +22,14 @@ public class CoffeeMachine {
             actionTake();
         }
     }
-    public static void AvailableProducts(){
+    public static void availableProducts(){
         System.out.println("The coffee machine has: ");
         System.out.println(water + " " + "of water");
         System.out.println(milk + " " + "of milk");
         System.out.println(beans + " " + "of beans");
         System.out.println(dCups + " " + "of disposable cups");
         System.out.println(money + " " + "of money");
-        System.out.println("                       ");
+        System.out.println();
 
     }
     public static void actionBuy(){
@@ -58,7 +58,7 @@ public class CoffeeMachine {
                 dCups = dCups - 1;
                 break;
         }
-        AvailableProducts();
+        availableProducts();
     }
     public static void actionFill(){
         Scanner scanner = new Scanner(System.in);
@@ -75,11 +75,11 @@ public class CoffeeMachine {
         milk = milk + addMilk;
         beans = beans + addBeans;
         dCups = dCups + adddCups;
-        AvailableProducts();
+        availableProducts();
     }
     public static void actionTake(){
         System.out.println("I gave you" + " " + "$" + money);
         money = 0;
-        AvailableProducts();
+        availableProducts();
     }
 }
